@@ -1,0 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Noto+Sans+SC:wght@400;500&display=swap');
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+.CH {
+    font-family: 'Noto Sans SC', sans-serif;
+}
+.fade-enter {
+    opacity: 0;
+}
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms; /* 与timeout匹配 */
+}
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+}

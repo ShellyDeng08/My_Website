@@ -1,0 +1,87 @@
+{
+    "EN": [
+        {
+            "name": "SUMMARY",
+            "data": "Seasoned Front-End/Full Stack Engineer with 6+ years in major tech firms, adept in multi-platform development including JavaScript, Node.js, HTML/CSS, React, React Native etc. Proven track record in optimizing web applications and advancing cross-platform projects. Committed to leveraging technical innovation to enhance user experience and drive product evolution."
+        },
+        {
+            "name": "EXPERIENCE",
+            "data": [
+                {
+                    "companyName": "TikTok",
+                    "title": "Software Engineer",
+                    "location": "Singapore",
+                    "startTime": "Jun 2021",
+                    "endTime": "Sep 2023", 
+                    "description": [
+                        "Spearheaded the development and launch of TikTok's Live Wallet and official website recharge page, successfully expanding recharge services to 50+ countries. Tech Stack: React, TypeScript.",
+                        "Led the team to build a frontend monitoring system, reducing online incidents by ~30% and boosting R&D efficiency by ~20%.",
+                        "Oversaw the overhaul and day-to-day maintenance of the wallet's backend management system. Tech Stack: Node.js, React.",
+                        "Contributed to the design and implementation of the Arena platform's permission system, now utilized by 10+ business units. Tech Stack: Node.js, MySQL.",
+                        "Actively involved in the micro-frontend architecture upgrade of Arena, ensuring stable module migration and code refactoring."
+                    ],
+                    "type": "Full time"
+                },
+                {
+                    "companyName": "Trip.com Group",
+                    "title": "Fullstack Engineer",
+                    "location": "Shanghai, China",
+                    "startTime": "Jan 2018",
+                    "endTime": "Apr 2021", 
+                    "description": [
+                        "Directed the tech stack migration from C# & jQuery to React & Node, achieving a 30%+ page speed boost.",
+                        "Established a universal component library with a unit test coverage of 90%, and actively promoted tech sharing within the team.",
+                        "Achieved a ~50% performance optimization of the hotel details page through various tech enhancements."
+                    ],
+                    "type": "Full time"
+                },
+                {
+                    "companyName": "Jiahui Health",
+                    "title": "Frontend Engineer",
+                    "location": "Shanghai, China",
+                    "startTime": "Sep 2017",
+                    "endTime": "Jan 2018", 
+                    "description": [
+                        "Participated in the development of the company's inaugural website, achieving an aesthetically pleasing UI and high-performance browsing experience.",
+                        "Led the cross-platform development of the data analytics app using React Native."
+                    ],
+                    "type": "Full time"
+                },
+                {
+                    "companyName": "Vidahouse",
+                    "title": "Frontend Engineer",
+                    "location": "Shanghai, China",
+                    "startTime": "Sep 2016",
+                    "endTime": "Sep 2017", 
+                    "description": [
+                        "Engaged in the R&D of the smart design app, primarily using React Native.",
+                        "Independently built a documentation management system, employing tech stacks like Node.js, MongoDB, React, and Bootstrap."
+                    ],
+                    "type": "Intern"
+                }
+            ]
+        },
+        {
+            "name": "EDUCATION",
+            "data": {
+                "schoolName": "Sichuan Normal University",
+                "degree": "Bachelor degree",
+                "major": "Electronic Information Engineering",
+                "startTime": "Sep 2013",
+                "endTime": "Jun 2017",
+                "GPA": "GPA: 3.43/4",
+                "location": "Chengdu, China",
+            }
+        },
+        {
+            "name": "SKILLS",
+            "data": {
+                "tech": ["JavaScript", "React", "Vue.js", "Node.js", "TypeScript", "React Native", "HTML/CSS", "jQuery", "Golang", "MySQL", "Jest"],
+                "language": ["Mandarin", "English"]
+            }
+        }
+    ],
+    "CH": {
+
+    }
+}

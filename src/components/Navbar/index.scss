@@ -1,0 +1,40 @@
+.navbar {
+    // background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    &-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-item {
+        margin: 0 15px;
+    }
+    &-link {
+        position: relative;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        overflow: hidden;
+        &:hover {
+            color: #ddd;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -6px; // 调整与父元素底部的距离，负值越大，离的越远
+            left: 50%;
+            background-color: #4CAF50;
+            transition: all 0.3s ease-in-out;
+            transform: translateX(-50%) scaleX(0);
+        }
+        &:hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+    }
+}  

@@ -1,0 +1,10 @@
+.home {
+    background-image: url("../../../public/home-background.png");
+    background-position: top;
+    background-size: cover; 
+    color: white;
+    &-welcome {
+        text-align: center;
+        padding: 50px;
+    }
+}

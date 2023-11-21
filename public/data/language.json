@@ -1,0 +1,14 @@
+{
+    "EN": {
+        "home_welcome": "Welcome to Xuelian's personal website, where we explore the fascinating world of technology and innovation!",
+        "nav_resume": "Resume",
+        "nav_portfolio": "Portfolio",
+        "nav_blog": "Blog"
+    },
+    "CH": {
+        "home_welcome": "欢迎来到雪莲的个人网站，一起探索技术与创新的精彩世界！",
+        "nav_resume": "简历",
+        "nav_portfolio": "作品集",
+        "nav_blog": "博客"
+    }
+}
