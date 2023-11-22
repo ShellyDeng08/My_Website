@@ -16,7 +16,7 @@ const Layout = () => {
   const { languageStore } = rootStore
   return (
     <RootStoreContext.Provider value={rootStore}>
-      <div className={languageStore.selectedLanguage}> 
+      <div className={languageStore.selectedLanguage.code}> 
         <Navbar />
         <TransitionGroup>
           <CSSTransition key={location.key} timeout={300} classNames="fade">

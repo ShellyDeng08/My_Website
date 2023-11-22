@@ -1,17 +1,29 @@
 import { makeAutoObservable } from 'mobx'
 import { BASE_PATH } from '../config/router'
 
+interface SelectedLanguage {
+    isActive: boolean,
+    name: string,
+    code: string,
+}
+
+interface LanguageConfig {
+    [key: string]: SelectedLanguage
+}
 class LanguageStore {
-    language = [{
-        isActive: false,
-        name: '中文',
-        code: 'CH',
-    }, {
-        isActive: true,
-        name: 'English',
-        code: 'EN',
-    }]
-    selectedLanguage = 'CH'
+    languageConfig: LanguageConfig = {
+        'EN': {
+            isActive: true,
+            name: 'English',
+            code: 'EN',
+        },
+        'CH': {
+            isActive: false,
+            name: '中文',
+            code: 'CH',
+        }
+    }
+    selectedLanguage: SelectedLanguage = this.languageConfig['EN']
     i18n: {[key:string]: any} = {}
     constructor() {
         makeAutoObservable(this)
@@ -27,19 +39,15 @@ class LanguageStore {
     }
 
     toggleLanguage(code: string) {
-        if (this.selectedLanguage === code) return;
-        this.selectedLanguage = code
-        this.language.forEach(item => {
-            if (item.isActive) {
-                item.isActive = false
-            } else if (item.code === code) {
-                item.isActive = true
-            }
-        })
+        if (this.selectedLanguage['code'] === code) return;
+        this.languageConfig[this.selectedLanguage['code']].isActive = false
+        this.languageConfig[code].isActive = true
+        this.selectedLanguage = this.languageConfig[code]
     } 
 
     getTranslation(key: string): string {
-        const translations = this.i18n[this.selectedLanguage];
+        const code = this.selectedLanguage.code
+        const translations = this.i18n[code];
         return translations?.[key] || key; // 如果找不到翻译，则返回key本身
     }
 }

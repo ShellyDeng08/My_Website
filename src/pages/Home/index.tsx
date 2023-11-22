@@ -1,16 +1,26 @@
 import {useContext} from 'react'
 import { observer } from 'mobx-react-lite'
 import { RootStoreContext } from '../../context'
+import { Button } from '@mui/material'
+
 import "./index.scss"
 const Home = observer(() => {
-    const { languageStore } = useContext(RootStoreContext)
+    const { languageStore, userInfoStore } = useContext(RootStoreContext)
     // console.log(rootStore)
     return (
         <div className="home">
             <section className="home-welcome">
-                <h1>
-                {languageStore.getTranslation('home_welcome')}
-                </h1>
+                <div className='home-self-intro'>
+                    <h1>
+                    {languageStore.getTranslation('home_welcome')}
+                    </h1>
+                    <p>{userInfoStore.userInfo.profile}</p>
+                    <Button>{languageStore.getTranslation("home_explore")}</Button>
+                </div>
+                
+                <div className='home-avatar'>
+                    <img src="/my-website/image/home-avatar.jpg" alt="" />
+                </div>
             </section>
             
             <section>
