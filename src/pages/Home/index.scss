@@ -29,10 +29,30 @@
     &-timeline {
         position: relative;
     }
-    &-portfolio-img {
-        margin: 0 20px;
-        max-width: 300px;
-        width: 90%;
+    &-portfolio {
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        &-left {
+
+        }
+        &-img {
+            margin: 0 20px;
+            max-width: 300px;
+            width: 90%;
+        }
+    }
+    &-blog {
+        padding: 30px;
+        display: flex;
+        gap: 5%;
+        &-item {
+            width: 30%;
+            img {
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
     }
     &-footer {
 
