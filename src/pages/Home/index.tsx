@@ -5,7 +5,15 @@ import { Button } from '@mui/material'
 import Timeline from '../../components/Timeline'
 import useCanvasDrawLine from '../../hooks/useCanvasDrawLine'
 import { BASE_PATH } from '../../config/router'
+import Carousel from '../../components/carousel'
 import "./index.scss"
+
+const slideImgList = [
+    `${BASE_PATH}/image/slide-trip1.png`,
+    `${BASE_PATH}/image/slide-trip2.png`,
+    `${BASE_PATH}/image/slide-trip3.png`,
+    `${BASE_PATH}/image/slide-trip4.png`
+]
 const Home = observer(() => {
     const { languageStore, userInfoStore } = useContext(RootStoreContext)
     useCanvasDrawLine("dynamicCanvas")
@@ -30,7 +38,11 @@ const Home = observer(() => {
             </section>
             
             <section className='home-timeline home-basic'>
-                作品或博客
+                <Carousel slidesToShow={1}>
+                    {slideImgList.map((item, index) => (
+                        <img src={item} key={index} width="100%" className='home-portfolio-img' />
+                    ))}
+                </Carousel>
             </section>
             <footer className='home-footer'>
                 联系方式
