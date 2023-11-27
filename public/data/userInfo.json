@@ -1,14 +1,22 @@
 {
     "EN": {
         "userName": "DENG XUELIAN",
+        "userNameEn": "Shelly",
         "email": "xldeng0808@gmail.com",
         "title": "Fullstack Engineer/Frontend Engineer",
-        "profile": "I'm a Senior Front-End/Full-Stack Engineer with 6+ years of experience, formerly at TikTok and Trip.com, dedicated to technological innovation and exceptional user experience."
+        "profile": "I'm a Senior Front-End/Full-Stack Engineer with 6+ years of experience, formerly at TikTok and Trip.com, dedicated to technological innovation and exceptional user experience.",
+        "githubLink": "https://github.com/ShellyDeng08",
+        "linkedinLink": "https://www.linkedin.com/in/xuelian-deng-21332b260/",
+        "address": "Los Angeles, CA, US"
     },
     "CH": {
         "userName": "邓雪莲",
+        "userNameEn": "Shelly",
         "email": "xldeng0808@gmail.com",
         "title": "全栈工程师/前端工程师",
-        "profile": "我是拥有超过6年工作经验的前端/全栈工程师，曾任职于TikTok和Trip.com等公司，致力于技术创新和卓越用户体验。"
+        "profile": "我是拥有超过6年工作经验的前端/全栈工程师，曾任职于TikTok和Trip.com等公司，致力于技术创新和卓越用户体验。",
+        "githubLink": "https://github.com/ShellyDeng08",
+        "linkedinLink": "https://www.linkedin.com/in/xuelian-deng-21332b260/",
+        "address": "洛杉矶，加利福利亚，美国"
     }
 }

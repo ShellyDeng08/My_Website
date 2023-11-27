@@ -1,15 +1,17 @@
-import {useContext} from 'react'
+import {useContext, useEffect} from 'react'
 import { observer } from 'mobx-react-lite'
 import { RootStoreContext } from '../../context'
 import { Button } from '@mui/material'
-
+import Timeline from '../../components/Timeline'
+import useCanvasDrawLine from '../../hooks/useCanvasDrawLine'
+import { BASE_PATH } from '../../config/router'
 import "./index.scss"
 const Home = observer(() => {
     const { languageStore, userInfoStore } = useContext(RootStoreContext)
-    // console.log(rootStore)
+    useCanvasDrawLine("dynamicCanvas")
     return (
         <div className="home">
-            <section className="home-welcome">
+            <section className="home-welcome home-basic">
                 <div className='home-self-intro'>
                     <h1>
                     {languageStore.getTranslation('home_welcome')}
@@ -19,19 +21,20 @@ const Home = observer(() => {
                 </div>
                 
                 <div className='home-avatar'>
-                    <img src="/my-website/image/home-avatar.jpg" alt="" />
+                    <img src={`${BASE_PATH}/image/home-avatar.jpg`} alt="" />
                 </div>
             </section>
-            
-            <section>
-                关键信息
+            <section className='home-timeline home-basic'>
+                <canvas id="dynamicCanvas"></canvas>
+                <Timeline />
             </section>
-            <section>
+            
+            <section className='home-timeline home-basic'>
                 作品或博客
             </section>
-            <section>
+            <footer className='home-footer'>
                 联系方式
-            </section>
+            </footer>
         </div>
     )
 })

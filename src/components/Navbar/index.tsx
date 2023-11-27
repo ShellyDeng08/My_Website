@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite'
 import { ROUTE_PATH } from '../../config/router'
 import { useRootStore } from '../../hooks/useStore'
 import { Menu, MenuItem, Button } from '@mui/material'
-import { Language as LanguageIcon } from '@mui/icons-material';
+import LanguageIcon from '@mui/icons-material/Language';
 import "./index.scss"
 
 
@@ -12,13 +12,16 @@ const BASE_CLA = "navbar"
 const Navbar = observer(() => {
     const [anchorEl, setAnchorEl] = useState<null|HTMLElement>(null)
     const { languageStore, userInfoStore } = useRootStore()
-    const { languageConfig, selectedLanguage } = languageStore
+    const { languageConfig, selectedLanguage, getTranslation } = languageStore
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const goToContact = () => {
+
+    }
     const languageOpen = Boolean(anchorEl)
     
     return (
@@ -36,6 +39,9 @@ const Navbar = observer(() => {
                 </li>
                 <li className={`${BASE_CLA}-item`}>
                     <Link to={ROUTE_PATH.blog} className={({ isActive }) => "navbar-link" + (isActive ? " active" : "")}>{languageStore.getTranslation("nav_blog")}</Link>
+                </li>
+                <li>
+                    <Button variant="outlined" onClick={goToContact}>{getTranslation("nav_contact")}</Button>
                 </li>
             </ul>
             <section className='navbar-right'>

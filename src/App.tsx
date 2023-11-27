@@ -6,6 +6,7 @@ import Resume from './pages/Resume'
 import Portfolio from './pages/Portfolio'
 import Blog from './pages/Blog'
 import Navbar from './components/Navbar'
+import Footer from './components/footer'
 import { RootStoreContext } from './context'
 import { rootStore } from './stores/rootStore'
 import { ROUTE_PATH, BASE_PATH  } from './config/router'
@@ -23,6 +24,7 @@ const Layout = () => {
             <Outlet />
           </CSSTransition>
         </TransitionGroup>
+        <Footer />
       </div>
       
     </RootStoreContext.Provider>

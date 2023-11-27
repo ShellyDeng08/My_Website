@@ -20,7 +20,8 @@
                         "Contributed to the design and implementation of the Arena platform's permission system, now utilized by 10+ business units. Tech Stack: Node.js, MySQL.",
                         "Actively involved in the micro-frontend architecture upgrade of Arena, ensuring stable module migration and code refactoring."
                     ],
-                    "type": "Full time"
+                    "type": "Full time",
+                    "iconUrl": "/image/company-TikTok.png"
                 },
                 {
                     "companyName": "Trip.com Group",
@@ -33,7 +34,8 @@
                         "Established a universal component library with a unit test coverage of 90%, and actively promoted tech sharing within the team.",
                         "Achieved a ~50% performance optimization of the hotel details page through various tech enhancements."
                     ],
-                    "type": "Full time"
+                    "type": "Full time",
+                    "iconUrl": "/image/company-Trip.png"
                 },
                 {
                     "companyName": "Jiahui Health",
@@ -45,7 +47,8 @@
                         "Participated in the development of the company's inaugural website, achieving an aesthetically pleasing UI and high-performance browsing experience.",
                         "Led the cross-platform development of the data analytics app using React Native."
                     ],
-                    "type": "Full time"
+                    "type": "Full time",
+                    "iconUrl": "/image/company-Jiahui.png"
                 },
                 {
                     "companyName": "Vidahouse",
@@ -57,13 +60,14 @@
                         "Engaged in the R&D of the smart design app, primarily using React Native.",
                         "Independently built a documentation management system, employing tech stacks like Node.js, MongoDB, React, and Bootstrap."
                     ],
-                    "type": "Intern"
+                    "type": "Intern",
+                    "iconUrl": "/image/company-Vidahouse.png"
                 }
             ]
         },
         {
             "name": "EDUCATION",
-            "data": {
+            "data": [{
                 "schoolName": "Sichuan Normal University",
                 "degree": "Bachelor degree",
                 "major": "Electronic Information Engineering",
@@ -71,7 +75,8 @@
                 "endTime": "Jun 2017",
                 "GPA": "GPA: 3.43/4",
                 "location": "Chengdu, China",
-            }
+                "iconUrl": "/image/school.png"
+            }]
         },
         {
             "name": "SKILLS",

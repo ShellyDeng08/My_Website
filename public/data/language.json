@@ -4,13 +4,21 @@
         "home_explore": "Explore more",
         "nav_resume": "Resume",
         "nav_portfolio": "Portfolio",
-        "nav_blog": "Blog"
+        "nav_blog": "Blog",
+        "nav_contact": "Contact me",
+        "footer_email": "Email",
+        "footer_linkedin": "Linkedin",
+        "footer_github": "Github"
     },
     "CH": {
         "home_welcome": "欢迎来到雪莲的个人网站！",
         "home_explore": "探索更多",
         "nav_resume": "简历",
         "nav_portfolio": "作品集",
-        "nav_blog": "博客"
+        "nav_blog": "博客",
+        "nav_contact": "联系我",
+        "footer_email": "个人邮箱",
+        "footer_linkedin": "领英",
+        "footer_github": "Github"
     }
 }

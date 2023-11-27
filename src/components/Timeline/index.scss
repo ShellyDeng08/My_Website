@@ -1,0 +1,122 @@
+
+body {
+    --y-line-height: 80px;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0.1;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+.timeline {
+    position: relative;
+    padding: 100px 125px;
+    width: 100%;
+    overflow: visible;
+    ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        align-items: center; 
+
+        &::after {
+            
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            opacity: 0;
+            z-index: -1;
+            animation-name: slideInFromLeft;
+            animation-duration: 5s; /* 动画持续时间 */
+            animation-delay: 0.5s; /* 动画延迟时间 */
+            animation-play-state: paused;
+            animation-fill-mode: forwards;
+            width: 100%;
+            height: 2px;
+            background: blue;
+            transform: rotateZ(-10deg);
+        }
+    }
+    ul.start-animation::after {
+        animation-play-state: running;
+    }
+    ul.start-animation .timeline-item {
+        animation-play-state: running;
+    }
+    &-item {
+        opacity: 0;
+        position: relative;
+        min-width: 150px;
+        max-width: 250px;
+        margin-left: 20px;
+        text-align: center;
+        animation-name: slideInFromLeft;
+        animation-duration: 1s; /* 动画持续时间 */
+        animation-play-state: paused;
+        animation-fill-mode: forwards;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: var(--y-line-height);
+            background: blue;
+            transform: translateX(-50%);
+        }
+        &:nth-child(odd)::after {
+            bottom: 50%; /* 对于奇数项，竖线从时间线向下延伸 */
+        }
+    
+        &:nth-child(even)::after {
+            top: 50%; /* 对于偶数项，竖线从时间线向上延伸 */
+        }
+    
+        &:nth-child(odd) .timeline-content {
+            bottom: calc(50% + var(--y-line-height)); /* 对于奇数项，内容在竖线的正下方 */
+            left: 50%;
+            transform: translate(-50%, 0); /* 水平居中，不垂直偏移 */
+        }
+    
+        &:nth-child(even) .timeline-content {
+            top: calc(50% + var(--y-line-height)); /* 对于偶数项，内容在竖线的正上方 */
+            left: 50%;
+            transform: translate(-50%, 0); /* 水平居中，不垂直偏移 */
+        }
+    }
+    &-image {
+        position: relative;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        z-index: 1;
+    }
+    &-content {
+        position: absolute;
+        width: 100%;
+        background: white;
+        padding: 10px;
+        border-radius: 3px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        h3 {
+            margin-top: 0;
+        }
+    }
+}
+
+#dynamicCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 确保 canvas 在内容下方 */
+}
+

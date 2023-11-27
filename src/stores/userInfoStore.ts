@@ -5,9 +5,13 @@ import RootStore from './rootStore'
 
 interface UserInfo {
     userName: string;
+    userNameEn: string;
     email: string;
     title: string;
-    profile: string
+    profile: string;
+    githubLink: string;
+    linkedinLink: string;
+    address: string;
 }
 
 class UserInfoStore {
