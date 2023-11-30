@@ -59,7 +59,7 @@ const Home = observer(() => {
                     ))}
                 </Carousel>
             </section>
-            <section className='home-blog home-basic'>
+            <section className='home-blog'>
                 {blogList.map((item, index) => (
                     <a key={index} className="home-blog-item" href={item.link} target='_blank'>
                         <img src={item.img} />

@@ -14,7 +14,8 @@
         "nav_contact": "Contact me",
         "footer_email": "Email",
         "footer_linkedin": "Linkedin",
-        "footer_github": "Github"
+        "footer_github": "Github",
+        "resume_download_button": "Download Resume"
     },
     "CH": {
         "home_welcome": "欢迎来到雪莲的个人网站！",
@@ -31,6 +32,7 @@
         "nav_contact": "联系我",
         "footer_email": "个人邮箱",
         "footer_linkedin": "领英",
-        "footer_github": "Github"
+        "footer_github": "Github",
+        "resume_download_button": "下载简历"
     }
 }

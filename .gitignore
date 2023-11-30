@@ -23,3 +23,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# hexo_blog
+Thumbs.db
+db.json
+*.log
+.deploy*/
+_multiconfig.yml

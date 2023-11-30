@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider, Outlet, useLocation } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-import Home from './pages/Home'
-import Resume from './pages/Resume'
+import Home from './pages/home'
+import Resume from './pages/resume'
 import Portfolio from './pages/Portfolio'
 import Blog from './pages/Blog'
 import Navbar from './components/Navbar'
