@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { NavLink as Link } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
-import { ROUTE_PATH } from '../../config/router'
+import { BASE_PATH, ROUTE_PATH } from '../../config/router'
 import { useRootStore } from '../../hooks/useStore'
 import { Menu, MenuItem, Button } from '@mui/material'
 import LanguageIcon from '@mui/icons-material/Language';
+import { BLOG_URL } from '../../utils/const'
 import "./index.scss"
 
 
@@ -27,7 +28,7 @@ const Navbar = observer(() => {
     return (
         <nav className={"navbar"}>
             <section className='navbar-left'>
-                <span className='navbar-avatar'>XL</span>
+                <img className='navbar-avatar' src={`${BASE_PATH}/image/logo.png`} />
                 <span className='navbar-user-name'>{userInfoStore.userInfo.userName}</span>
             </section>
             <ul className={`${BASE_CLA}-list`}>
@@ -38,7 +39,7 @@ const Navbar = observer(() => {
                     <Link to={ROUTE_PATH.portfolio} className={({ isActive }) => "navbar-link" + (isActive ? " active" : "")}>{languageStore.getTranslation("nav_portfolio")}</Link>
                 </li>
                 <li className={`${BASE_CLA}-item`}>
-                    <Link to={ROUTE_PATH.blog} className={({ isActive }) => "navbar-link" + (isActive ? " active" : "")}>{languageStore.getTranslation("nav_blog")}</Link>
+                    <a href={BLOG_URL} className="navbar-link" target="_blank">{languageStore.getTranslation("nav_blog")}</a>
                 </li>
                 <li>
                     <Button variant="outlined" onClick={goToContact}>{getTranslation("nav_contact")}</Button>

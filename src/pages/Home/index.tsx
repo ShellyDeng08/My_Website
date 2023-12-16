@@ -2,10 +2,9 @@ import {useContext, useEffect} from 'react'
 import { observer } from 'mobx-react-lite'
 import { RootStoreContext } from '../../context'
 import { Button } from '@mui/material'
-import Timeline from '../../components/Timeline'
 import { BASE_PATH } from '../../config/router'
 import Carousel from '../../components/carousel'
-import "./index.scss"
+import styles from "./index.module.scss"
 
 const slideImgList = [
     `${BASE_PATH}/image/slide-trip1.png`,
@@ -15,7 +14,8 @@ const slideImgList = [
 ]
 
 const Home = observer(() => {
-    const { languageStore, userInfoStore } = useContext(RootStoreContext)
+    const { languageStore, userInfoStore, resumeStore } = useContext(RootStoreContext)
+    const { timelineData } = resumeStore
     const blogList = [{
         img: `${BASE_PATH}/image/blog-function.png`,
         title: languageStore.getTranslation("home_blog_3"),
@@ -31,21 +31,47 @@ const Home = observer(() => {
     }]
     return (
         <div className="home">
-            <section className="home-welcome home-basic">
-                <div className='home-self-intro'>
-                    <h1>
-                    {languageStore.getTranslation('home_welcome')}
-                    </h1>
-                    <p>{userInfoStore.userInfo.profile}</p>
-                    <Button>{languageStore.getTranslation("home_explore")}</Button>
-                </div>
-                
-                <div className='home-avatar'>
-                    <img src={`${BASE_PATH}/image/home-avatar.jpg`} alt="" />
+            <section className={styles.homeWelcome}>
+                <div className={styles.welcomeContainer}>
+                    <div>
+                        <h1 className={styles.welcomeTitle}>
+                        {languageStore.getTranslation('home_welcome')}
+                        </h1>
+                        <p className={styles.welcomeDesc}>{userInfoStore.userInfo.profile}</p>
+                        <Button className={styles.exploreButton} variant="outlined">{languageStore.getTranslation("home_explore")}</Button>
+                        <div>
+                            <div className={styles.welcomeHighlight}>
+                                <p className={styles.welcomeHighlightTitle}>6+ Y</p>
+                                <p className={styles.welcomeHighlightText}>Work Experience</p>
+                            </div>
+
+                            <div className={styles.welcomeHighlight}>
+                                <p className={styles.welcomeHighlightTitle}>20+</p>
+                                <p className={styles.welcomeHighlightText}>Completed Projects</p>
+                            </div>
+                            <div className={styles.welcomeHighlight}>
+                                <p className={styles.welcomeHighlightTitle}>95%</p>
+                                <p className={styles.welcomeHighlightText}>Positive Reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className={styles.homeAvatar}>
+                        <img src={`${BASE_PATH}/image/home-avatar.jpg`} alt="" />
+                    </div>
                 </div>
             </section>
-            <section className='home-timeline home-basic'>
-                <Timeline />
+            <section className='home-timeline'>
+                {timelineData.map((item, index) => (
+                    <>
+                        <img src={item.iconUrl} alt={item.title} className="home-timeline-image" />
+                        <div className="timeline-content">
+                            <h3>{item.title}</h3>
+                            <span>{item.timeRange}</span>
+                        </div>
+                    </>
+                    
+                ))}
             </section>
             
             <section className='home-portfolio home-basic'>

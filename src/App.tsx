@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     element: <Layout/>,
     children: [
       {
-        path: ROUTE_PATH.home,
+        path: BASE_PATH,
         element: <Home/>,
         errorElement: <div><h1>Oh, seems the page gone!</h1></div>
       },

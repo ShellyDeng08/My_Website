@@ -1,8 +1,9 @@
 
 :root {
+
     --primary-color: rgb(124,103,180);
     --secondary-color: #f1f1f1;
-    --text-color: rgb(56,71,83);
+    --text-color: rgb(61,64,71);
 }
 
 .root-dark {
@@ -10,7 +11,12 @@
     --primary-color: #4a76a8;
     --secondary-color: #e0e0e0;
 }
-
+body {
+    color: var(--text-color);
+}
+p {
+    margin: 0;
+}
 body.light {
     background-color: #fff;
 }

@@ -15,9 +15,9 @@ body {
 }
 .timeline {
     position: relative;
-    padding: 100px 125px;
-    width: 100%;
-    overflow: visible;
+    // padding: 100px 125px;
+    // width: 100%;
+    // overflow: visible;
     ul {
         list-style: none;
         display: flex;
@@ -25,25 +25,25 @@ body {
         margin: 0;
         align-items: center; 
 
-        &::after {
+        // &::after {
             
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 50%;
-            opacity: 0;
-            z-index: -1;
-            animation-name: slideInFromLeft;
-            animation-duration: 5s; /* 动画持续时间 */
-            animation-delay: 0.5s; /* 动画延迟时间 */
-            animation-play-state: paused;
-            animation-fill-mode: forwards;
-            width: 100%;
-            height: 2px;
-            background: blue;
-            transform: rotateZ(-10deg);
-        }
+        //     content: '';
+        //     position: absolute;
+        //     left: 0;
+        //     right: 0;
+        //     top: 50%;
+        //     opacity: 0;
+        //     z-index: -1;
+        //     animation-name: slideInFromLeft;
+        //     animation-duration: 5s; /* 动画持续时间 */
+        //     animation-delay: 0.5s; /* 动画延迟时间 */
+        //     animation-play-state: paused;
+        //     animation-fill-mode: forwards;
+        //     width: 100%;
+        //     height: 2px;
+        //     background: blue;
+        //     transform: rotateZ(-10deg);
+        // }
     }
     ul.start-animation::after {
         animation-play-state: running;
@@ -71,6 +71,12 @@ body {
             background: blue;
             transform: translateX(-50%);
         }
+        &::before {
+            content: '';
+            width: 50px;
+            height: 2px;
+            background: blue;
+        }
         &:nth-child(odd)::after {
             bottom: 50%; /* 对于奇数项，竖线从时间线向下延伸 */
         }
@@ -91,6 +97,12 @@ body {
             transform: translate(-50%, 0); /* 水平居中，不垂直偏移 */
         }
     }
+    &-x-line {
+        display: block;
+        width: 100px;
+        height: 2px;
+        background-color: #000;
+    }
     &-image {
         position: relative;
         border-radius: 50%;
@@ -100,13 +112,14 @@ body {
     }
     &-content {
         position: absolute;
-        width: 100%;
+        // width: 100%;
         background: white;
         padding: 10px;
         border-radius: 3px;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         h3 {
             margin-top: 0;
+            // text-wrap: nos
         }
     }
 }

@@ -29,7 +29,7 @@ const Timeline = observer(() => {
         <div className="timeline">
             
             <ul>
-                <span className='timeline-x-line'></span>
+                
                 {timelineData.map((item, index) => (
                     <li 
                         className='timeline-item' key={index}
@@ -41,6 +41,7 @@ const Timeline = observer(() => {
                             <h3>{item.title}</h3>
                             <span>{item.timeRange}</span>
                         </div>
+                        <span className='timeline-x-line'></span>
                     </li>
                 ))}
             </ul>

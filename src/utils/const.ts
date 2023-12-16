@@ -1,0 +1,1 @@
+export const BLOG_URL = 'https://shellydeng08.github.io/my-blog/'

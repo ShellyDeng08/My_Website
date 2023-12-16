@@ -1,0 +1,134 @@
+.home {
+    background-image: linear-gradient(45deg, rgba(175, 197, 228, .5), transparent);
+
+    &-basic {
+        height: 100vh;
+    }
+    &-self-intro {
+        flex: 2;
+    }
+    
+    &-timeline {
+        position: relative;
+    }
+    &-portfolio {
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        &-left {
+
+        }
+        &-img {
+            margin: 0 20px;
+            max-width: 300px;
+            width: 90%;
+        }
+    }
+    &-blog {
+        padding: 30px;
+        display: flex;
+        gap: 5%;
+        &-item {
+            width: 30%;
+            img {
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
+    }
+    &-footer {
+
+    }
+}
+.homeWelcome {
+    padding: 50px;
+    background: linear-gradient(10deg,transparent 50%, #ffefba);
+}
+.exploreButton {
+    margin-top: 16px;
+}
+.welcomeContainer {
+    display: flex;
+    text-align: center;
+    max-width: 980px;
+    margin: auto;
+    gap: 10vw
+}
+.welcomeTitle {
+    font-size: 36px;
+    color: #3f72af;
+    font-weight: 400;
+}
+.welcomeDesc {
+    text-align: left;
+}
+// .welcomeHighlightContainer {}
+.welcomeHighlight {
+
+    display: inline-block;
+    background: #bbded6;
+    padding: 10px;
+    margin-top: 16px;
+    margin-left: 5px;
+}
+.welcomeHighlightTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.welcomeHighlightText {
+    font-size: 10px;
+    color: rgba(0,0,0,.5);
+}
+.homeAvatar {
+    border-radius: 10px;
+    flex: 1 1 50%;
+    img {
+        width: 300px;
+        border-radius: 10px;
+    }
+}
+
+.home-tag {
+    display: flex;
+    &-text {
+        position: relative;
+        margin: 10px;
+        padding: 10px;
+        background: aliceblue;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        transition: all linear .3s;
+        justify-content: center;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            width: 154px;
+            height: 154px;
+            border: 4px solid #000;
+            left: -11px;
+            opacity: 0.1;
+            transition: all linear .3s;
+        }
+        &:hover {
+            transform: scale(120%);
+        }
+        &:hover::after {
+            opacity: 0.5;
+            transform: scale(120%);
+
+        }
+    }
+}
+
+.home-timeline {
+    &-image {
+        width: 150px;
+    }
+}
