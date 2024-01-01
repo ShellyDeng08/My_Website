@@ -6,6 +6,16 @@ import { BASE_PATH } from '../../config/router'
 import Carousel from '../../components/carousel'
 import styles from "./index.module.scss"
 
+import Timeline from '@mui/lab/Timeline'
+import TimelineItem from '@mui/lab/TimelineItem'
+import TimelineSeparator from '@mui/lab/TimelineSeparator'
+import TimelineDot from '@mui/lab/TimelineDot'
+import TimelineContent from '@mui/lab/TimelineContent'
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent'
+import TimelineConnector from '@mui/lab/TimelineConnector'
+import Typography from '@mui/material/Typography'
+
+
 const slideImgList = [
     `${BASE_PATH}/image/slide-trip1.png`,
     `${BASE_PATH}/image/slide-trip2.png`,
@@ -61,18 +71,35 @@ const Home = observer(() => {
                     </div>
                 </div>
             </section>
-            <section className='home-timeline'>
+            <Timeline position='alternate'>
+               
                 {timelineData.map((item, index) => (
                     <>
-                        <img src={item.iconUrl} alt={item.title} className="home-timeline-image" />
-                        <div className="timeline-content">
-                            <h3>{item.title}</h3>
-                            <span>{item.timeRange}</span>
-                        </div>
+                        <TimelineItem>
+                            <TimelineContent 
+                                sx={{m: 'auto 0'}}
+                                align='left'>
+                                <Typography>
+                                {item.timeRange}
+                                </Typography>
+                                
+                            </TimelineContent>
+                            <TimelineSeparator>
+                                <TimelineConnector style={{minHeight: 20}} />
+                                <TimelineDot style={{border: 'none', padding: 0}}>
+                                    <img src={item.iconUrl} alt={item.title} className="w-50" />
+                                </TimelineDot>
+                            </TimelineSeparator>
+                            <TimelineOppositeContent>
+                                <Typography>
+                                {item.title}
+                                </Typography>
+                            </TimelineOppositeContent>
+                        </TimelineItem>
                     </>
                     
                 ))}
-            </section>
+            </Timeline>
             
             <section className='home-portfolio home-basic'>
                 <div className='home-portfolio-left'>

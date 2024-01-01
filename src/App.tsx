@@ -10,13 +10,16 @@ import Footer from './components/footer'
 import { RootStoreContext } from './context'
 import { rootStore } from './stores/rootStore'
 import { ROUTE_PATH, BASE_PATH  } from './config/router'
+import { StyledEngineProvider } from '@mui/material/styles';
+
 import "./App.scss"
 
 const Layout = () => {
   const location = useLocation();
   const { languageStore } = rootStore
   return (
-    <RootStoreContext.Provider value={rootStore}>
+    <StyledEngineProvider injectFirst>
+      <RootStoreContext.Provider value={rootStore}>
       <div className={languageStore.selectedLanguage.code}> 
         <Navbar />
         <TransitionGroup>
@@ -28,6 +31,8 @@ const Layout = () => {
       </div>
       
     </RootStoreContext.Provider>
+    </StyledEngineProvider>
+    
   )
 }
 
