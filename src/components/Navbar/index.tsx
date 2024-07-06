@@ -7,6 +7,9 @@ import { Menu, MenuItem, Button } from '@mui/material'
 import LanguageIcon from '@mui/icons-material/Language';
 import { BLOG_URL } from '../../utils/const'
 import "./index.scss"
+import { useTheme } from '../../context/ThemeContext'
+import Switch from '@mui/material/Switch';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 
 const BASE_CLA = "navbar"
@@ -23,6 +26,8 @@ const Navbar = observer(() => {
     const goToContact = () => {
 
     }
+
+    const {toggleTheme, theme} = useTheme()
     const languageOpen = Boolean(anchorEl)
     
     return (
@@ -31,7 +36,7 @@ const Navbar = observer(() => {
                 <img className='navbar-avatar' src={`${BASE_PATH}/image/logo.png`} />
                 <span className='navbar-user-name'>{userInfoStore.userInfo.userName}</span>
             </section>
-            <ul className={`${BASE_CLA}-list`}>
+            {/* <ul className={`${BASE_CLA}-list`}>
                 <li className={`${BASE_CLA}-item`}>
                     <Link to={ROUTE_PATH.resume} className={({ isActive }) => "navbar-link" + (isActive ? " active" : "")}>{languageStore.getTranslation("nav_resume")}</Link>
                 </li>
@@ -41,10 +46,7 @@ const Navbar = observer(() => {
                 <li className={`${BASE_CLA}-item`}>
                     <a href={BLOG_URL} className="navbar-link" target="_blank">{languageStore.getTranslation("nav_blog")}</a>
                 </li>
-                <li>
-                    <Button variant="outlined" onClick={goToContact}>{getTranslation("nav_contact")}</Button>
-                </li>
-            </ul>
+            </ul> */}
             <section className='navbar-right'>
                 <Button
                     id="basic-button"
@@ -69,6 +71,13 @@ const Navbar = observer(() => {
                         <MenuItem key={key} onClick={() => languageStore.toggleLanguage(languageConfig[key].code)}>{languageConfig[key].name}</MenuItem>
                     ))}
                 </Menu>
+                <FormControlLabel control={
+                    <Switch  
+                        checked={theme === 'dark'}
+                        onChange={toggleTheme}
+                        inputProps={{ 'aria-label': 'controlled' }}/>} 
+                label={getTranslation("Dark mode")} />
+                <Button variant="outlined" onClick={goToContact}>{getTranslation("nav_contact")}</Button>
             </section>
         </nav>
     )

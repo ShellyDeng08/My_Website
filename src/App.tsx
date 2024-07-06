@@ -11,8 +11,10 @@ import { RootStoreContext } from './context'
 import { rootStore } from './stores/rootStore'
 import { ROUTE_PATH, BASE_PATH  } from './config/router'
 import { StyledEngineProvider } from '@mui/material/styles';
-
+import { ThemeProvider } from './context/ThemeContext'
+import './variables.scss'
 import "./App.scss"
+
 
 const Layout = () => {
   const location = useLocation();
@@ -67,7 +69,10 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+    
   );
 }
 
