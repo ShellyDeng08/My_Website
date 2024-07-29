@@ -5,6 +5,7 @@ import { Button } from '@mui/material'
 import { BASE_PATH } from '../../config/router'
 import Carousel from '../../components/carousel'
 import styles from "./index.module.scss"
+import './index.scss'
 
 import Timeline from '@mui/lab/Timeline'
 import TimelineItem from '@mui/lab/TimelineItem'
@@ -49,26 +50,13 @@ const Home = observer(() => {
                         </h1>
                         <p className={styles.welcomeDesc}>{userInfoStore.userInfo.profile}</p>
                         <Button className={styles.exploreButton} variant="outlined">{languageStore.getTranslation("home_explore")}</Button>
-                        <div>
-                            <div className={styles.welcomeHighlight}>
-                                <p className={styles.welcomeHighlightTitle}>6+ Y</p>
-                                <p className={styles.welcomeHighlightText}>Work Experience</p>
-                            </div>
-
-                            <div className={styles.welcomeHighlight}>
-                                <p className={styles.welcomeHighlightTitle}>20+</p>
-                                <p className={styles.welcomeHighlightText}>Completed Projects</p>
-                            </div>
-                            <div className={styles.welcomeHighlight}>
-                                <p className={styles.welcomeHighlightTitle}>95%</p>
-                                <p className={styles.welcomeHighlightText}>Positive Reviews</p>
-                            </div>
-                        </div>
+                        
                     </div>
                     
                     <div className={styles.homeAvatar}>
                         <img src={`${BASE_PATH}/image/home-avatar.jpg`} alt="" />
                     </div>
+
                 </div>
             </section>
             <Timeline position='alternate'>

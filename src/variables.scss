@@ -1,8 +1,12 @@
 :root {
     --bg-color: #fff;
     --text-color: #000;
+    --font-family: "Playwrite US Modern", cursive;
 }
 [data-theme='dark'] {
     --bg-color: #000;
     --text-color: #fff;
+}
+[data-language='CH'] {
+    --font-family: "ZCOOL KuaiLe", sans-serif;
 }

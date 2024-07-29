@@ -43,6 +43,7 @@ class LanguageStore {
         this.languageConfig[this.selectedLanguage['code']].isActive = false
         this.languageConfig[code].isActive = true
         this.selectedLanguage = this.languageConfig[code]
+        document.documentElement.setAttribute('data-language', code)
     } 
 
     // 这里推荐用箭头函数，否则在外面调用如果用了const {getTranslation} = languageStore; getTranslation(xxx)

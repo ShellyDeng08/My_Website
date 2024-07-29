@@ -3,21 +3,23 @@ footer {
     // padding: 24px;
     a {
         // text-decoration: none;
-        color: black;
+        color: var(--text-color);
     }
 }
 .footer-main {
-    width: 60%;
-    margin: auto;
-    position: relative;
-    top: -58px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px #ccc;
+    // width: 60%;
+    // margin: auto;
+    // position: relative;
+    // top: -58px;
+    // background-color: #fff;
+    // border-radius: 10px;
+    // box-shadow: 5px 5px 5px #ccc;
     padding: 24px;
 }
 .footer-content {
-
+    svg {
+        color: var(--text-color);
+    }
 }
 .footer-text {
     vertical-align: super;
@@ -33,7 +35,7 @@ footer {
     padding: 12px;
     text-align: center;
     background-color: rgb(52, 72, 84);
-    color: #fff;
+    color: var(--text-color);
     font-size: 12px;
 }
 .padding-left-8 {

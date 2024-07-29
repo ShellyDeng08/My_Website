@@ -7,13 +7,20 @@ const Footer = () => {
     const { languageStore, userInfoStore } = useRootStore()
     const { languageConfig, selectedLanguage, getTranslation } = languageStore
     const { userInfo } = userInfoStore
+    console.log(userInfo)
     return (
         <footer>
             <div className='footer-main'>
-                <a href={`mailto:${userInfo.email}?subject=Say Hello From Xuelian's Website`} className="footer-content">
+                <h2>{getTranslation("footer_title")}</h2>
+                <div>
                     <EmailIcon />
-                    <span className='footer-text'>{userInfo.email}</span>
-                </a>
+                    <span>{getTranslation("footer_email")}</span>
+                    <a href={`mailto:${userInfo.email}?subject=Say Hello From Xuelian's Website`} className="footer-content">
+                        <span className='footer-text'>{userInfo.email}</span>
+                    </a>
+                </div>
+
+                
                 <p className="footer-content">
                     <FmdGoodIcon />
                     <span className='footer-text'>{userInfo.address}</span>

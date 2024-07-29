@@ -1,45 +1,4 @@
-.home {
-    background-image: linear-gradient(45deg, rgba(175, 197, 228, .5), transparent);
 
-    &-basic {
-        height: 100vh;
-    }
-    &-self-intro {
-        flex: 2;
-    }
-    
-    &-timeline {
-        position: relative;
-    }
-    &-portfolio {
-        display: flex;
-        align-items: center;
-        padding: 0 30px;
-        &-left {
-
-        }
-        &-img {
-            margin: 0 20px;
-            max-width: 300px;
-            width: 90%;
-        }
-    }
-    &-blog {
-        padding: 30px;
-        display: flex;
-        gap: 5%;
-        &-item {
-            width: 30%;
-            img {
-                width: 100%;
-                border-radius: 8px;
-            }
-        }
-    }
-    &-footer {
-
-    }
-}
 .homeWelcome {
     padding: 50px;
     background: linear-gradient(10deg,transparent 50%, #ffefba);

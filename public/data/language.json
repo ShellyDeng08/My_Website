@@ -18,6 +18,7 @@
         "footer_email": "Email",
         "footer_linkedin": "Linkedin",
         "footer_github": "Github",
+        "footer_title": "Reach Out to Me",
         "resume_download_button": "Download Resume"
     },
     "CH": {
@@ -39,6 +40,7 @@
         "footer_email": "个人邮箱",
         "footer_linkedin": "领英",
         "footer_github": "Github",
+        "footer_title": "通过以下方式找到我",
         "resume_download_button": "下载简历"
     }
 }
