@@ -1,6 +1,23 @@
 .home {
-    background-image: linear-gradient(45deg, rgba(175, 197, 228, .5), transparent);
+    &-welcome {
+        padding: 50px;
+        display: flex;
+        text-align: center;
+        max-width: 980px;
+        margin: auto;
+        gap: 10vw
+    }
+    &-avatar {
+        flex: 1 1 50%;
+        img {
+            width: 300px;
+            border-radius: 50%;
+        }
+    }
 
+    &-personal-card {
+
+    }
     &-basic {
         height: 100vh;
     }
@@ -38,5 +55,23 @@
     }
     &-footer {
 
+    }
+}
+
+.home-personal-card {
+    background-color: var(--secondary-color);
+    width: 28rem;
+    height: 15rem;
+    position: relative;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 9px #ddd;
+    &:after {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 0.5rem;
+        height: 100%;
+        top: 0;
+        background-color: var(--primary-color);
     }
 }

@@ -4,7 +4,6 @@ import { RootStoreContext } from '../../context'
 import { Button } from '@mui/material'
 import { BASE_PATH } from '../../config/router'
 import Carousel from '../../components/carousel'
-import styles from "./index.module.scss"
 import './index.scss'
 
 import Timeline from '@mui/lab/Timeline'
@@ -15,6 +14,9 @@ import TimelineContent from '@mui/lab/TimelineContent'
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent'
 import TimelineConnector from '@mui/lab/TimelineConnector'
 import Typography from '@mui/material/Typography'
+import Footer from '../../components/footer'
+import EmailIcon from '@mui/icons-material/Email';
+import FmdGoodIcon from '@mui/icons-material/FmdGood';
 
 
 const slideImgList = [
@@ -27,6 +29,7 @@ const slideImgList = [
 const Home = observer(() => {
     const { languageStore, userInfoStore, resumeStore } = useContext(RootStoreContext)
     const { timelineData } = resumeStore
+    const { userInfo } = userInfoStore
     const blogList = [{
         img: `${BASE_PATH}/image/blog-function.png`,
         title: languageStore.getTranslation("home_blog_3"),
@@ -42,21 +45,27 @@ const Home = observer(() => {
     }]
     return (
         <div className="home">
-            <section className={styles.homeWelcome}>
-                <div className={styles.welcomeContainer}>
-                    <div>
-                        <h1 className={styles.welcomeTitle}>
-                        {languageStore.getTranslation('home_welcome')}
-                        </h1>
-                        <p className={styles.welcomeDesc}>{userInfoStore.userInfo.profile}</p>
-                        <Button className={styles.exploreButton} variant="outlined">{languageStore.getTranslation("home_explore")}</Button>
-                        
+            <section className={"flex flex-wrap p-8"}>
+                <div>
+                    <h1 className={"welcome-title"}>{languageStore.getTranslation('home_welcome')}</h1>
+                    <p>{userInfoStore.userInfo.profile}</p>
+                    <Button variant="outlined">{languageStore.getTranslation("home_explore")}</Button>
+                    
+                </div>
+                
+                <div className={"home-avatar"}>
+                    <img src={`${BASE_PATH}/image/home-avatar.jpg`} alt="" />
+                </div>
+                <div className='home-personal-card'>
+                    <div className='p-8'>
+                        <p className='text-xl font-bold text-primary'>{userInfo.userName}</p>
+                        <p className='text-sm'>{userInfo.title}</p>
+                        <div>
+                            <span><FmdGoodIcon/>{userInfo.address}</span>
+                            <span><EmailIcon/>{userInfo.email}</span>
+                        </div>
                     </div>
                     
-                    <div className={styles.homeAvatar}>
-                        <img src={`${BASE_PATH}/image/home-avatar.jpg`} alt="" />
-                    </div>
-
                 </div>
             </section>
             <Timeline position='alternate'>
@@ -108,9 +117,7 @@ const Home = observer(() => {
                     </a>
                 ))}
             </section>
-            <footer className='home-footer'>
-                联系方式
-            </footer>
+            <Footer />
         </div>
     )
 })

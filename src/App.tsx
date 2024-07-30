@@ -6,15 +6,12 @@ import Resume from './pages/resume'
 import Portfolio from './pages/Portfolio'
 import Blog from './pages/Blog'
 import Navbar from './components/Navbar'
-import Footer from './components/footer'
 import { RootStoreContext } from './context'
 import { rootStore } from './stores/rootStore'
 import { ROUTE_PATH, BASE_PATH  } from './config/router'
 import { StyledEngineProvider } from '@mui/material/styles';
 import { ThemeProvider } from './context/ThemeContext'
-import './variables.scss'
-import "./App.scss"
-
+import './tailwind.css'
 
 const Layout = () => {
   const location = useLocation();
@@ -29,7 +26,7 @@ const Layout = () => {
             <Outlet />
           </CSSTransition>
         </TransitionGroup>
-        <Footer />
+        
       </div>
       
     </RootStoreContext.Provider>

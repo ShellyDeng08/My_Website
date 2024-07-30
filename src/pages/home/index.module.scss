@@ -1,8 +1,4 @@
 
-.homeWelcome {
-    padding: 50px;
-    background: linear-gradient(10deg,transparent 50%, #ffefba);
-}
 .exploreButton {
     margin-top: 16px;
 }
@@ -39,14 +35,7 @@
     font-size: 10px;
     color: rgba(0,0,0,.5);
 }
-.homeAvatar {
-    border-radius: 10px;
-    flex: 1 1 50%;
-    img {
-        width: 300px;
-        border-radius: 10px;
-    }
-}
+
 
 .home-tag {
     display: flex;
