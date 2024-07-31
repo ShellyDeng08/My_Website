@@ -45,27 +45,24 @@ const Home = observer(() => {
     }]
     return (
         <div className="home">
-            <section className={"flex flex-wrap p-8"}>
-                <div>
-                    <h1 className={"welcome-title"}>{languageStore.getTranslation('home_welcome')}</h1>
-                    <p>{userInfoStore.userInfo.profile}</p>
-                    <Button variant="outlined">{languageStore.getTranslation("home_explore")}</Button>
-                    
-                </div>
-                
-                <div className={"home-avatar"}>
-                    <img src={`${BASE_PATH}/image/home-avatar.jpg`} alt="" />
-                </div>
-                <div className='home-personal-card'>
-                    <div className='p-8'>
-                        <p className='text-xl font-bold text-primary'>{userInfo.userName}</p>
-                        <p className='text-sm'>{userInfo.title}</p>
-                        <div>
-                            <span><FmdGoodIcon/>{userInfo.address}</span>
-                            <span><EmailIcon/>{userInfo.email}</span>
+            <section className={"px-8"}>
+                <h1 className={"text-4xl text-center py-8"}>{languageStore.getTranslation('home_welcome')}</h1>
+                <div className='flex'>
+                    <div className={"home-avatar flex-1"}>
+                        <img src={`${BASE_PATH}/image/home-avatar.jpg`} alt="" />
+                    </div>
+                    <div className='home-personal-card flex flex-col flex-1'>
+                        <div className='pt-8 px-8'>
+                            <p className='text-xl font-bold text-primary pb-3'>{userInfo.userName}</p>
+                            <p className='text-sm'>{userInfo.title}</p>
+                        </div>
+                        <div className='px-8 flex-1'>
+                            <div className='personal-card-contact'>
+                                <p className='pb-4 pl-6 text-xs'><FmdGoodIcon fontSize="small" className='mr-4'/>{userInfo.address}</p>
+                                <p className='pl-6 text-xs'><EmailIcon fontSize="small" className='mr-4'/>{userInfo.email}</p>
+                            </div>
                         </div>
                     </div>
-                    
                 </div>
             </section>
             <Timeline position='alternate'>

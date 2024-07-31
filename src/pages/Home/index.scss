@@ -69,9 +69,39 @@
         position: absolute;
         display: block;
         content: "";
-        width: 0.5rem;
+        width: 0.8rem;
         height: 100%;
         top: 0;
         background-color: var(--primary-color);
+        right: 0px;
+        border-radius: 0 0.5rem 0.5rem 0;
     }
+    .personal-card-contact {
+        position: relative;
+        &::before {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 0.2rem;
+            height: 100%;
+            top: 0;
+            background-color: var(--grey-light1);
+        }
+        &::after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 0.5rem solid transparent;
+            border-bottom: 0.5rem solid transparent;
+            border-left: 0.6rem solid var(--grey-light1);
+            top: 50%;
+            transform: translate(30%, -50%);
+        }
+        svg {
+            color: var(--primary-color);
+        }
+    }
+
 }
