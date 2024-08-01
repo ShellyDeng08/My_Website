@@ -28,8 +28,9 @@ const slideImgList = [
 
 const Home = observer(() => {
     const { languageStore, userInfoStore, resumeStore } = useContext(RootStoreContext)
-    const { timelineData } = resumeStore
+    const { timelineData, findEducationData } = resumeStore
     const { userInfo } = userInfoStore
+    console.log(resumeStore.findEducationData())
     const blogList = [{
         img: `${BASE_PATH}/image/blog-function.png`,
         title: languageStore.getTranslation("home_blog_3"),
@@ -47,11 +48,11 @@ const Home = observer(() => {
         <div className="home">
             <section className={"px-8"}>
                 <h1 className={"text-4xl text-center py-8"}>{languageStore.getTranslation('home_welcome')}</h1>
-                <div className='flex'>
-                    <div className={"home-avatar flex-1"}>
+                <div className='flex items-center justify-around'>
+                    <div className={"home-avatar"}>
                         <img src={`${BASE_PATH}/image/home-avatar.jpg`} alt="" />
                     </div>
-                    <div className='home-personal-card flex flex-col flex-1'>
+                    <div className='home-personal-card flex flex-col'>
                         <div className='pt-8 px-8'>
                             <p className='text-xl font-bold text-primary pb-3'>{userInfo.userName}</p>
                             <p className='text-sm'>{userInfo.title}</p>
@@ -65,35 +66,41 @@ const Home = observer(() => {
                     </div>
                 </div>
             </section>
-            <Timeline position='alternate'>
-               
-                {timelineData.map((item, index) => (
-                    <>
-                        <TimelineItem>
-                            <TimelineContent 
-                                sx={{m: 'auto 0'}}
-                                align='left'>
-                                <Typography>
-                                {item.timeRange}
-                                </Typography>
-                                
-                            </TimelineContent>
-                            <TimelineSeparator>
-                                <TimelineConnector style={{minHeight: 20}} />
-                                <TimelineDot style={{border: 'none', padding: 0}}>
-                                    <img src={item.iconUrl} alt={item.title} className="w-50" />
-                                </TimelineDot>
-                            </TimelineSeparator>
-                            <TimelineOppositeContent>
-                                <Typography>
-                                {item.title}
-                                </Typography>
-                            </TimelineOppositeContent>
-                        </TimelineItem>
-                    </>
-                    
-                ))}
-            </Timeline>
+            <section>
+                <h1 className={"text-4xl py-8"}>{languageStore.getTranslation('qualification_title')}</h1>
+            </section>
+            <section>
+                <h1 className={"text-4xl text-center py-8"}>{languageStore.getTranslation('experience_title')}</h1>
+                <Timeline position='alternate'>
+                    {timelineData.map((item, index) => (
+                        <>
+                            <TimelineItem>
+                                <TimelineContent 
+                                    sx={{m: 'auto 0'}}
+                                    align='left'>
+                                    <Typography>
+                                    {item.timeRange}
+                                    </Typography>
+                                    
+                                </TimelineContent>
+                                <TimelineSeparator>
+                                    <TimelineConnector style={{minHeight: 20}} />
+                                    <TimelineDot style={{border: 'none', padding: 0}}>
+                                        <img src={item.iconUrl} alt={item.title} className="w-50" />
+                                    </TimelineDot>
+                                </TimelineSeparator>
+                                <TimelineOppositeContent>
+                                    <Typography>
+                                    {item.title}
+                                    </Typography>
+                                </TimelineOppositeContent>
+                            </TimelineItem>
+                        </>
+                        
+                    ))}
+                </Timeline>
+            </section>
+            
             
             <section className='home-portfolio home-basic'>
                 <div className='home-portfolio-left'>
