@@ -17,6 +17,7 @@ import Typography from '@mui/material/Typography'
 import Footer from '../../components/footer'
 import EmailIcon from '@mui/icons-material/Email';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
+import Qualification from './components/Qualification'
 
 
 const slideImgList = [
@@ -28,9 +29,8 @@ const slideImgList = [
 
 const Home = observer(() => {
     const { languageStore, userInfoStore, resumeStore } = useContext(RootStoreContext)
-    const { timelineData, findEducationData } = resumeStore
+    const { timelineData } = resumeStore
     const { userInfo } = userInfoStore
-    console.log(resumeStore.findEducationData())
     const blogList = [{
         img: `${BASE_PATH}/image/blog-function.png`,
         title: languageStore.getTranslation("home_blog_3"),
@@ -66,9 +66,7 @@ const Home = observer(() => {
                     </div>
                 </div>
             </section>
-            <section>
-                <h1 className={"text-4xl py-8"}>{languageStore.getTranslation('qualification_title')}</h1>
-            </section>
+            <Qualification />
             <section>
                 <h1 className={"text-4xl text-center py-8"}>{languageStore.getTranslation('experience_title')}</h1>
                 <Timeline position='alternate'>
