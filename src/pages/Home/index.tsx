@@ -1,23 +1,16 @@
 import {useContext, useEffect} from 'react'
 import { observer } from 'mobx-react-lite'
 import { RootStoreContext } from '../../context'
-import { Button } from '@mui/material'
 import { BASE_PATH } from '../../config/router'
 import Carousel from '../../components/carousel'
 import './index.scss'
 
-import Timeline from '@mui/lab/Timeline'
-import TimelineItem from '@mui/lab/TimelineItem'
-import TimelineSeparator from '@mui/lab/TimelineSeparator'
-import TimelineDot from '@mui/lab/TimelineDot'
-import TimelineContent from '@mui/lab/TimelineContent'
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent'
-import TimelineConnector from '@mui/lab/TimelineConnector'
-import Typography from '@mui/material/Typography'
+
 import Footer from '../../components/footer'
 import EmailIcon from '@mui/icons-material/Email';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import Qualification from './components/Qualification'
+import Experience from './components/Experience'
 
 
 const slideImgList = [
@@ -67,7 +60,8 @@ const Home = observer(() => {
                 </div>
             </section>
             <Qualification />
-            <section>
+            <Experience />
+            {/* <section>
                 <h1 className={"text-4xl text-center py-8"}>{languageStore.getTranslation('experience_title')}</h1>
                 <Timeline position='alternate'>
                     {timelineData.map((item, index) => (
@@ -97,7 +91,7 @@ const Home = observer(() => {
                         
                     ))}
                 </Timeline>
-            </section>
+            </section> */}
             
             
             <section className='home-portfolio home-basic'>

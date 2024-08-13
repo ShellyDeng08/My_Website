@@ -5,7 +5,7 @@ import { RootStoreContext } from '../../../context'
 const Qualification = observer(() => {
     const { languageStore, resumeStore } = useContext(RootStoreContext)
     const { educationData, skillData } = resumeStore
-    console.log(educationData)
+    console.log(skillData)
     return (
         <section>
             <h1 className={"text-4xl py-8"}>{languageStore.getTranslation('qualification_title')}</h1>
@@ -17,7 +17,11 @@ const Qualification = observer(() => {
                 </div>
             ))}
             <h2>Skills</h2>
-
+            {skillData.map((item, index) => (
+                <div key={index}>
+                    <p>{item.title}: {item.value}</p>
+                </div>
+            ))}
         </section>
     )
 })

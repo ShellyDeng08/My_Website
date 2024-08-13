@@ -8,6 +8,22 @@
             "name": "EXPERIENCE",
             "data": [
                 {
+                    "companyName": "Blitz",
+                    "title": "Software Engineer",
+                    "location": "Los Angeles, US",
+                    "startTime": "Apr 2024",
+                    "endTime": "Until Now", 
+                    "description": [
+                        "Spearheaded the development and launch of TikTok's Live Wallet and official website recharge page, successfully expanding recharge services to 50+ countries. Tech Stack: React, TypeScript.",
+                        "Led the team to build a frontend monitoring system, reducing online incidents by ~30% and boosting R&D efficiency by ~20%.",
+                        "Oversaw the overhaul and day-to-day maintenance of the wallet's backend management system. Tech Stack: Node.js, React.",
+                        "Contributed to the design and implementation of the Arena platform's permission system, now utilized by 10+ business units. Tech Stack: Node.js, MySQL.",
+                        "Actively involved in the micro-frontend architecture upgrade of Arena, ensuring stable module migration and code refactoring."
+                    ],
+                    "type": "Full time",
+                    "iconUrl": "/image/company-blitz.png"
+                },
+                {
                     "companyName": "TikTok",
                     "title": "Software Engineer",
                     "location": "Singapore",
@@ -79,11 +95,17 @@
             }]
         },
         {
-            "name": "SKILLS",
-            "data": {
-                "tech": ["JavaScript", "React", "Vue.js", "Node.js", "TypeScript", "React Native", "HTML/CSS", "jQuery", "Golang", "MySQL", "Jest"],
-                "language": ["Mandarin", "English"]
-            }
+            "name": "SKILL",
+            "data": [{
+                "title": "Programming Languages",
+                "value": "JavaScript, HTML/CSS, Python"
+            }, {
+                "title": "Web Development",
+                "value": "React, Node.js"
+            }, {
+                "title": "Tools",
+                "value": "Git, Webpack"
+            }]
         }
     ],
     "CH": {

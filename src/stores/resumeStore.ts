@@ -4,9 +4,9 @@ import RootStore from './rootStore'
 import LanguageStore from './languageStore'
 
 enum ResumeType {
-    EXPERIENCE = 'experience',
-    SKILL = 'skill',
-    EDUCATION = 'education'
+    EXPERIENCE = 'EXPERIENCE',
+    SKILL = 'SKILL',
+    EDUCATION = 'EDUCATION'
 }
 
 type ExperienceData = Array<{
@@ -32,8 +32,8 @@ type EducationData = Array<{
 }>
 
 type SkillData = Array<{
-    tech: string[],
-    language: string[],
+    title: string,
+    value: string;
 }>
 type ResumeItem = 
     | { name: ResumeType.EXPERIENCE; data: ExperienceData }
@@ -42,6 +42,7 @@ type ResumeItem =
 type ResumeData = ResumeItem[]
 
 type TimelineData = Array<{
+    companyName: string;
     title: string;
     timeRange: string;
     iconUrl: string;
@@ -81,6 +82,7 @@ class ResumeStore {
             const data = yield res.json()
             this.allResumeData = data
             this.setData(this.languageStore.selectedLanguage.code)
+            this.setTimelineData(this.languageStore.selectedLanguage.code)
         } catch(e) {
             console.error('Get Resume Error:', e)
         } finally {
@@ -97,18 +99,15 @@ class ResumeStore {
 
 
     setTimelineData = (code: string) => {
-        const resumeInfoData = this.resumeInfo
-        const educationData = (resumeInfoData.find(item => item.name === ResumeType.EDUCATION)?.data || []) as EducationData
+        const resumeInfoData = this.allResumeData[code]
+        // const educationData = (resumeInfoData.find(item => item.name === ResumeType.EDUCATION)?.data || []) as EducationData
         const experienceData = (resumeInfoData.find(item => item.name === ResumeType.EXPERIENCE)?.data || []) as ExperienceData
-        this.timelineData = educationData.map(item => ({
-            title: item.schoolName,
+        this.timelineData = experienceData.map(item => ({
+            companyName: item.companyName,
+            title: item.title,
             timeRange: `${item.startTime}-${item.endTime}`,
             iconUrl: `${BASE_PATH}${item.iconUrl}`
-        })).concat(...(experienceData.map(item => ({
-            title: item.companyName,
-            timeRange: `${item.startTime}-${item.endTime}`,
-            iconUrl: `${BASE_PATH}${item.iconUrl}`
-        }))))
+        }))
     }
 }
 
